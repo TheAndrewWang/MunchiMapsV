@@ -76,11 +76,6 @@
 			name: "Folsom Library"
 		},
 		{
-			lngLat: [-73.68029169801159, 42.72960386468434],
-			label: "JEC",
-			name: "Jonsson Engineering Center"
-		},
-		{
 			lngLat: [-73.68171131969798, 42.72919655301884],
 			label: "VCC",
 			name: "Voorhees Computing Center"
