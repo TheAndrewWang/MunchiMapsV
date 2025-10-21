@@ -91,20 +91,11 @@
 			name: "Darrins Communication Center"
 		},
 		{
-			lngLat: [-73.67865533083648, 42.72747150666548],
+			lngLat: [-73.67865533083648, 42.72747150666548, ],
 			label: "ACAD",
 			name: "Academy Hall"
-		},
-		{
-			lngLat: [-73.67666013050939, 42.72999296344826],
-			label: "UNION",
-			name: "Student Union"
-		},
-		{
-			lngLat: [-73.68029169801159, 42.72960386468434],
-			label: "JEC",
-			name: "Jonsson Engineering Center"
-		},
+		}
+
 	];
 </script>
 
