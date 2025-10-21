@@ -94,6 +94,36 @@
 			lngLat: [-73.67865533083648, 42.72747150666548, ],
 			label: "ACAD",
 			name: "Academy Hall"
+		},
+		{
+			lngLat: [-73.67667306945825, 42.73003109055379],
+			label: "UNION",
+			name: "Student Union"
+		},
+		{
+			lngLat: [-73.67695508859656, 42.72874095641851],
+			label: "MUEL",
+			name: "Mueller Center"
+		},
+		{
+			lngLat: [-73.67706306681026, 42.72925872470994],
+			label: "PUBS",
+			name: "Public Safety"
+		},
+		{
+			lngLat: [-73.67507235977408, 42.72789628631035],
+			label: "WARR",
+			name: "Warren Hall"
+		},
+		{
+			lngLat: [-73.67410609411658, 42.72726872790462],
+			label: "DAVI",
+			name: "Davison Hall"
+		},
+		{
+			lngLat: [-73.67466868880095, 42.72701762211237],
+			label: "SHARP",
+			name: "Sharp Hall"
 		}
 
 	];
