@@ -9,7 +9,7 @@
 	} from 'svelte-maplibre-gl';
 
 	import PopupContent from '../assets/PopupContent.svelte';
-
+	
 	let offset = $state(24);
 
 	let offsets: maplibregl.Offset = $derived({
@@ -113,7 +113,7 @@
 	<!-- Creates markers for each vending machine -->
 	{#each vendingMachines as {lngLat, label, name}, i (label)}
 	<Marker lnglat={lngLat}>
-		<Popup class="text-black"  offset={offsets}>
+		<Popup class="text-black" offset={offsets} maxWidth="500px">
 			<span class="text-lg"><PopupContent name={label} /></span>
 		</Popup> 
 	</Marker>
