@@ -8,7 +8,7 @@
 		Popup
 	} from 'svelte-maplibre-gl';
 
-	import PopupContent from '../assets/PopupContent.svelte';
+	import PopupContent from '$lib/PopupContent.svelte';
 	
 	let offset = $state(24);
 
@@ -102,10 +102,12 @@
 
 
 <MapLibre
-	class="h-[100vh] min-h-[300px]"
+	class="h-[89vh] min-h-[300px]"
 	style="https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
 	zoom={16}
-	center={{ lng: -73.679711, lat: 42.729878 }}
+	minZoom={15}
+	maxZoom={20}
+	center={{lng: -73.679711, lat: 42.729000}}
 >
 	<NavigationControl />
 	<ScaleControl />
