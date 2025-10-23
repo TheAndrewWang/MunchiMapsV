@@ -1,38 +1,22 @@
-# sv
+# MunchiMaps
+MunchiMaps is a vending machine tracker for the RPI campus. It differentiates between a drink and a snack vending machine.
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This project was founded through the RCOS Summer 2024 semester.
 
-## Creating a project
+Founding Members: (Co-Lead) Mila Zlatkovic,(Co-Lead) Mike Cautela,(Sub-Lead) Anannya Punia, Marcus Li, Kevin Shreenauth, Hao Chen, Djan Carbonell, William Fang
 
-If you're seeing this, you've probably already done this step. Congrats!
+Key Features that were implemented: Search function, Review function, Report function, Relocate function, Dark mode
 
-```sh
-# create a new project in the current directory
-npx sv create
+Fall 2024 Members: Anannya Punia (Co-Lead), Kevin Shreenauth (Co-Lead), Hanzhen "Ryan" Qin, Ansh Revankar, Kaia Lind, Laura Phan, Aliya Yang, Braden Lam
 
-# create a new project in my-app
-npx sv create my-app
-```
+Key Features that were implemented: Path Finding Algorithim, Building Database, Backend creation, Mobile Application Tech Stack Research
 
-## Developing
+Current Members: Kevin Shreenauth (Lead), Devon Becker, Vincent Huang, Trivika Komatireddy, Chris Lo, Will Shockey, Andrew Wang
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Public Server to be found and shared soon for those curious to visit our website!
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This version of MunchiMaps (MunchiMapsV) is a conversion of the site to Svelte currently being done by Andrew Wang & Vincent Huang.
+This brings the following benefits:
+1. Removal of previous redundant code
+2. Better organization of code & more readable for future coders
+3. Many aspects (especially the map) are easier to use for users
