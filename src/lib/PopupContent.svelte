@@ -1,9 +1,7 @@
 <script lang="ts">
     import vendingmachine1 from './assets/vendingmachine1.png';
-    import cookie from './assets/CookieFavicon.png';
-    let {name, description} = $props();
-    
-    
+    import cookie from './assets/favicon.png';
+    let {name, description} = $props(); 
 </script>
 
 <style> 
