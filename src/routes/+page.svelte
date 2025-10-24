@@ -29,71 +29,85 @@
 		lngLat: [number, number];
 		label: string;
 		name: string;
+		desc: string;
 	}[] = [
 		{
 			lngLat: [-73.681651, 42.730809],
 			label: "SAGE",
-			name: "Sage Laboratory"
+			name: "Sage Laboratory",
+			desc: "The drink vending machine may be out of order"
 		},
 		{
 			lngLat: [-73.68330157518193, 42.73116600874377],
 			label: "PITT",
-			name: "Pittsburgh Building"
+			name: "Pittsburgh Building",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.68295555310202, 42.731700696055434],
 			label: "WEST",
-			name: "West Hall"
+			name: "West Hall",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.6798374240988, 42.73132975313813],
 			label: "NRTH",
-			name: "North Hall"
+			name: "North Hall",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.67752181751882, 42.73061394762189],
 			label: "QUAD",
-			name: "Quadrangle Complex"
+			name: "Quadrangle Complex",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.6825574941326, 42.730197213747864],
 			label: "AMOS",
-			name: "Amos Eaton Hall"
+			name: "Amos Eaton Hall",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.68113341612114, 42.7300239006993],
 			label: "GREEN",
-			name: "Greene Building"
+			name: "Greene Building",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.68029169801159, 42.72960386468434],
 			label: "JEC",
-			name: "Jonsson Engineering Center"
+			name: "Jonsson Engineering Center",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.68253738669405, 42.72946856762978],
 			label: "FOLS",
-			name: "Folsom Library"
+			name: "Folsom Library",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.68171131969798, 42.72919655301884],
 			label: "VCC",
-			name: "Voorhees Computing Center"
+			name: "Voorhees Computing Center",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.68044080659577, 42.728875195952874],
 			label: "JROWL",
-			name: "Jonsson Rowland Science Center"
+			name: "Jonsson Rowland Science Center",
+			desc: "Everything works properly"
 		},
 		{
 			lngLat: [-73.67925449364766, 42.729221843140024],
 			label: "DCC",
-			name: "Darrins Communication Center"
+			name: "Darrins Communication Center",
+			desc: "The drink vending machine may be out of order"
 		},
 		{
 			lngLat: [-73.67865533083648, 42.72747150666548, ],
 			label: "ACAD",
-			name: "Academy Hall"
+			name: "Academy Hall",
+			desc: "Everything works properly"
 		}
 
 	];
@@ -113,10 +127,10 @@
 	<ScaleControl />
 
 	<!-- Creates markers for each vending machine -->
-	{#each vendingMachines as {lngLat, label, name}, i (label)}
+	{#each vendingMachines as {lngLat, label, name, desc}, i (label)}
 	<Marker lnglat={lngLat}>
 		<Popup class="text-black" offset={offsets} maxWidth="500px">
-			<span class="text-lg"><PopupContent name={label} /></span>
+			<span class="text-lg"><PopupContent name={label} description={desc}/></span>
 		</Popup> 
 	</Marker>
 	{/each}
