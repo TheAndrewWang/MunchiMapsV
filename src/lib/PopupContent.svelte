@@ -1,7 +1,9 @@
 <script lang="ts">
     import vendingmachine1 from './assets/vendingmachine1.png';
     import cookie from './assets/favicon.png';
-    let {name, description} = $props(); 
+    let {name, description} = $props();
+    
+    
 </script>
 
 <style> 
@@ -22,28 +24,41 @@
         flex-direction: column;
     }
     .submit-button {
+        display: flex;
+        flex-direction: column;
         padding: 5px 10px;
         border: 2px solid black;
-        border-radius: 5px;
-        float: right;   
+        border-radius: 5px;  
     }
     .submit-button:hover {
         background-color: #000000;
         color: white;
         cursor: pointer;
     }
+    .button-div {
+        padding-top: 100px;
+        padding-left: 200px;
+    }
+
     .desc {
         padding-bottom: 90px;
         font-size: 24;
     }
+    .cookie-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        float: right;
+    }
     .cookie {
         width: 45px;
         filter: brightness(40%);
-        float: right;
     }
     .cookie:hover {
         filter: brightness(100%);
         transform: scale(1.5);
+    }
+    .cookie:hover~.cookie {
+        filter: brightness(100%);
     }
 
 </style>
@@ -73,7 +88,7 @@
         <img class="cookie" src={cookie} alt="cookie 4">
         <img class="cookie" src={cookie} alt="cookie 5">
     </div>
-    <div>
+    <div class="button-div">
     <button class="submit-button">Submit</button>
     </div>
 </div>
