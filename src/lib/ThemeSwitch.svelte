@@ -34,6 +34,7 @@
 
 <div>
     <input checked={$darkMode} on:click={handleSwitchDarkMode} type="checkbox" id="theme-toggle" />
+    <!-- svelte-ignore element_invalid_self_closing_tag -->
     <label for="theme-toggle" />
 </div>
 

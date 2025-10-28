@@ -7,10 +7,13 @@
 		GeolocateControl,
 		Popup
 	} from 'svelte-maplibre-gl';
+	import type { Map } from 'maplibre-gl';
 
-	import PopupContent from '$lib/PopupContent.svelte';
+	import Sidebar from '$lib/Sidebar.svelte';
 	import { darkMode } from '$lib/stores/ThemeStore';
+	import { sidebarOpen, selectedLocation } from '$lib/stores/SidebarStore';
 	
+	let mapInstance: Map | undefined = $state();
 	let offset = $state(24);
 
 	let offsets: maplibregl.Offset = $derived({
@@ -118,11 +121,32 @@
 		: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
 	);
 	
+	function handleMarkerClick(location: typeof vendingMachines[0]) {
+		selectedLocation.set({
+			label: location.label,
+			desc: location.desc
+		});
+		sidebarOpen.set(true);
+		
+		// Zoom to the selected marker with offset for sidebar
+		if (mapInstance) {
+			const sidebarWidth = 500; // Width of sidebar in pixels
+			
+			mapInstance.flyTo({
+				center: [location.lngLat[0], location.lngLat[1]],
+				zoom: 18,
+				offset: [sidebarWidth / 2, 0], // Shift view right by half sidebar width
+				essential: true
+			});
+		}
+	}
+
 </script>
 
-
+<Sidebar />
 
 <MapLibre
+	bind:map={mapInstance}
 	class="h-[89vh] min-h-[300px]"
 	style={mapStyle}
 	zoom={16}
@@ -134,17 +158,22 @@
 	<ScaleControl />
 
 	<!-- Creates markers for each vending machine -->
-	{#each vendingMachines as {lngLat, label, name, desc}, i (label)}
-	<Marker lnglat={lngLat}>
-		<Popup class="text-black" offset={offsets} maxWidth="500px">
-			<span class="text-lg"><PopupContent name={label} description={desc}/></span>
-		</Popup> 
+	{#each vendingMachines as location, i (location.label)}
+	<Marker lnglat={location.lngLat}>
+		{#snippet content()}
+			<button 
+				onclick={() => handleMarkerClick(location)}
+				style="background: #3b82f6; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;"
+			>
+				📍
+			</button>
+		{/snippet}
 	</Marker>
 	{/each}
 	<!-- Creates markers for each vending machine -->
     
 	<GeolocateControl
-		position="top-left"
+		position="top-right"
 		positionOptions={{ enableHighAccuracy: true }}
 		trackUserLocation={true}
 		showAccuracyCircle={false}

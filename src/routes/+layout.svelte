@@ -3,12 +3,16 @@
 	import favicon from '$lib/assets/favicon.png';
 	import logo from '$lib/assets/MunchiMapsLogo.png';
 	import helpCircle from '$lib/assets/help-circle.svg';
+	import helpCircleWhite from '$lib/assets/help-circle-white.svg';
 	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
 	import Overlay from '$lib/Overlay.svelte';
 
 	let { children } = $props();
 
 	import {isOverlayOpen} from '$lib/stores/OverlayStore'; // Import variable to check if overlay is open
+	import {darkMode} from '$lib/stores/ThemeStore'; // Import darkMode store
+	
+	let helpIcon = $derived($darkMode ? helpCircleWhite : helpCircle);
 </script>
 
 <style>
@@ -68,7 +72,7 @@
 			<img alt="help" src={favicon} class="favicon-img"/>
 		</button>
 		<button class="help-button" aria-label="Help" onclick={() => {isOverlayOpen.set(true)}}>
-			<img alt="help" src={helpCircle} class="help-button-img"/>
+			<img alt="help" src={helpIcon} class="help-button-img"/>
 		</button>
 	</div>
 </nav>
