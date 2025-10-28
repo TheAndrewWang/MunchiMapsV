@@ -9,6 +9,7 @@
 	} from 'svelte-maplibre-gl';
 
 	import PopupContent from '$lib/PopupContent.svelte';
+	import { darkMode } from '$lib/stores/ThemeStore';
 	
 	let offset = $state(24);
 
@@ -111,13 +112,19 @@
 		}
 
 	];
+	
+	let mapStyle = $derived($darkMode 
+		? "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json" 
+		: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
+	);
+	
 </script>
 
 
 
 <MapLibre
 	class="h-[89vh] min-h-[300px]"
-	style="https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
+	style={mapStyle}
 	zoom={16}
 	minZoom={15}
 	maxZoom={20}

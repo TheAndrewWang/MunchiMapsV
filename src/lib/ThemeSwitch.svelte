@@ -1,5 +1,39 @@
+<script lang="ts">
+    import { browser } from '$app/environment';
+    import { darkMode } from './stores/ThemeStore';
+
+    function handleSwitchDarkMode() {
+        darkMode.update(value => !value);
+        
+        darkMode.subscribe(value => {
+            if (browser) {
+                localStorage.setItem('theme', value ? 'dark' : 'light');
+                
+                if (value) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            }
+        });
+    }
+
+    if (browser) {
+        if (
+            localStorage.theme === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+            darkMode.set(true);
+        } else {
+            document.documentElement.classList.remove('dark');
+            darkMode.set(false);
+        }
+    }
+</script>
+
 <div>
-    <input type="checkbox" id="theme-toggle" />
+    <input checked={$darkMode} on:click={handleSwitchDarkMode} type="checkbox" id="theme-toggle" />
     <label for="theme-toggle" />
 </div>
 
@@ -11,7 +45,7 @@
     }
 
     #theme-toggle + label {
-        @apply inline-block cursor-pointer h-12 w-12 absolute top-6 right-16 rounded-full duration-300 content-[''];
+        @apply inline-block cursor-pointer h-12 w-12 absolute top-6 right-37 rounded-full duration-300 content-[''];
     }
 
     #theme-toggle:not(:checked) + label {
