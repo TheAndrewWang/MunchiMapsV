@@ -20,3 +20,8 @@ This brings the following benefits:
 1. Removal of previous redundant code
 2. Better organization of code & more readable for future coders
 3. Many aspects (especially the map) are easier to use for users
+
+# Setup instructions
+Install all files on computer, install node.js, and then type
+npm run dev
+into terminal
