@@ -59,7 +59,7 @@
 		},
 		{
 			lngLat: [-73.6798374240988, 42.73132975313813],
-			label: 'NRTH',
+			label: 'NORTH',
 			name: 'North Hall',
 			desc: 'Everything works properly',
 			typeOfMachine: 2
@@ -122,7 +122,7 @@
 		},
 		{
 			lngLat: [-73.67865533083648, 42.72747150666548],
-			label: 'ACAD',
+			label: 'ACADEMY',
 			name: 'Academy Hall',
 			desc: 'Everything works properly',
 			typeOfMachine: 2
