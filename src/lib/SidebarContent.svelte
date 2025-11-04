@@ -23,7 +23,7 @@
         margin-bottom: 10px;
     }
     .vending {
-        width: 150px;
+        width: 200px;
         margin-bottom: 15px;
     }
     .content-section {
