@@ -7,12 +7,14 @@
 	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
 	import Overlay from '$lib/Overlay.svelte';
 
-	let { children } = $props();
+	// let { children } = $props(); // not needed; keep rendering below
 
-	import {isOverlayOpen} from '$lib/stores/OverlayStore'; // Import variable to check if overlay is open
-	import {darkMode} from '$lib/stores/ThemeStore'; // Import darkMode store
-	
-	let helpIcon = $derived($darkMode ? helpCircleWhite : helpCircle);
+	import {isOverlayOpen} from '$lib/stores/OverlayStore';
+	import {darkMode} from '$lib/stores/ThemeStore';
+
+	// default to the regular icon, then reactively switch when theme changes
+	let helpIcon = helpCircle;
+	$: helpIcon = $darkMode ? helpCircleWhite : helpCircle;
 </script>
 
 <style>
@@ -71,7 +73,7 @@
 		<button class="help-button" aria-label="Help">
 			<img alt="help" src={favicon} class="favicon-img"/>
 		</button>
-		<button class="help-button" aria-label="Help" onclick={() => {isOverlayOpen.set(true)}}>
+		<button class="help-button" aria-label="Help" on:click={() => isOverlayOpen.set(true)}>
 			<img alt="help" src={helpIcon} class="help-button-img"/>
 		</button>
 	</div>
@@ -95,4 +97,4 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children?.()}
+<slot />

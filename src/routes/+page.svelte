@@ -220,7 +220,7 @@
 				onclick={() => handleMarkerClick(location)}
 				style="background: #3b82f6; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;"
 			>
-        {#if typeOfMachine == 2}
+        {#if location.typeOfMachine == 2}
           🍔🥤 <!--If we want to change to images refer to: https://svelte-maplibre-gl.mierune.dev/examples/dynamic-image-->
         {:else}
           🥤
