@@ -168,6 +168,7 @@
 			name: 'Sharp Hall',
       desc: "Everything works properly",
 			typeOfMachine: 1
+		}
 	];
 	
 	let mapStyle = $derived($darkMode 
