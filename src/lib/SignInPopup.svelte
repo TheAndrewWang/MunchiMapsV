@@ -20,11 +20,6 @@
 		console.log('Signed in:', data);
 	}
 	
-	function handleSignUp(event: Event) {
-		event.preventDefault();
-		// Sign up logic will go here
-		console.log('Sign up button clicked');
-	}
 </script>
 
 <style>

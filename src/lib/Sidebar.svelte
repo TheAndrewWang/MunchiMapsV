@@ -20,6 +20,12 @@
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
         overflow-y: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+    
+    .sidebar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
     }
     
     .sidebar.open {
