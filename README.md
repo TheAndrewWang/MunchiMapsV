@@ -22,6 +22,4 @@ This brings the following benefits:
 3. Many aspects (especially the map) are easier to use for users
 
 # Setup instructions
-Install all files on computer, install node.js, and then type
-npm run dev
-into terminal
+Clone repo, create .env file with supabase url and publishable key, then npm install. Finally npm run dev to start the server.
