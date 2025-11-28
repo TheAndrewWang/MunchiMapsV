@@ -1,7 +1,7 @@
 <script lang="ts">
     import vendingmachine1 from './assets/vendingmachine1.png';
     import cookie from './assets/favicon.png';
-    let {name, description} = $props();
+    let {name, description, location} = $props();
     
     
 </script>
@@ -30,10 +30,37 @@
         width: 100%;
         max-width: 400px;
     }
-    .desc {
-        font-size: 14px;
-        margin-bottom: 10px;
-        text-align: center;
+    .info-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    :global(.dark) .info-card {
+        background: linear-gradient(135deg, #434343 0%, #000000 100%);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 12px;
+        color: white;
+    }
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+    .info-label {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        opacity: 0.9;
+        margin-bottom: 4px;
+    }
+    .info-value {
+        font-size: 16px;
+        font-weight: 500;
     }
     .review-input {
         width: 100%;
@@ -103,7 +130,16 @@
     <img class="vending" src={vendingmachine1} alt="vending machine 1">
     
     <div class="content-section">
-        <h2 class="desc">{description}</h2>
+        <div class="info-card">
+            <div class="info-item">
+                <span class="info-label">Status:</span>
+                <span class="info-value">{description}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Location:</span>
+                <span class="info-value">{location}</span>
+            </div>
+        </div>
         
         <textarea 
             class="review-input"

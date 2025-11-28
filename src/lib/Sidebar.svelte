@@ -77,6 +77,7 @@
             <PopupContent 
                 name={$selectedLocation.label} 
                 description={$selectedLocation.desc}
+                location={$selectedLocation.location}
             />
         {/if}
     </div>
