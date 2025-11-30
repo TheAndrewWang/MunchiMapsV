@@ -20,3 +20,6 @@ This brings the following benefits:
 1. Removal of previous redundant code
 2. Better organization of code & more readable for future coders
 3. Many aspects (especially the map) are easier to use for users
+
+# Setup instructions
+Clone repo, create .env file with supabase url and publishable key, then npm install. Finally npm run dev to start the server.
